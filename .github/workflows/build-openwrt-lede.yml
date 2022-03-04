@@ -19,7 +19,7 @@ on:
     #- cron: '0 17 * * 0'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/poetraeble5/lede
   REPO_BRANCH: master
   FEEDS_CONF: router-config/lede-master/feeds.conf.default
   CONFIG_FILE: router-config/lede-master/.config
@@ -83,7 +83,7 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        make download -j8
+        make download -j
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
